@@ -2,11 +2,8 @@
 #include <string>
 using namespace std; 
 
-int main (){
-
-    int vagones = 3; //numero de vagones
-    int asientos_x_vagon = 15; //Numero de asientos por vagon
-     
+int tren(int vagones,int asientos_x_vagon){
+         
     int arr[vagones][asientos_x_vagon];
 
     //cout << sizeof arr/sizeof arr[0] << endl; // Cantidad de vagones
@@ -31,7 +28,6 @@ int main (){
     arr[3][2]=1, arr[3][3]=1, arr[3][5]=1, arr[3][8]=1, arr[3][9]=1, arr[3][11]=1, arr[3][13]=1;
     arr[4][0]=1, arr[4][2]=1, arr[4][3]=1, arr[4][4]=1, arr[4][5]=1, arr[4][9]=1, arr[4][13]=1;
     arr[5][2]=1, arr[5][3]=1, arr[5][5]=1, arr[5][8]=1, arr[5][9]=1, arr[5][11]=1, arr[5][13]=1;
-
     arr[6][0]=1, arr[6][2]=1, arr[6][3]=1, arr[6][4]=1, arr[6][5]=1, arr[6][9]=1, arr[6][13]=1;
     arr[7][2]=1, arr[7][3]=1, arr[7][5]=1, arr[7][8]=1, arr[7][9]=1, arr[7][11]=1, arr[7][0]=1;
     */
@@ -43,7 +39,7 @@ int main (){
         cout << "Asientos: " << endl;
         for(int j=0;j<asientos_x_vagon;++j){
             if (j+1<asientos_x_vagon){
-                cout << "#" << j << ": "<< arr[i][j] << "  " << "#" << j << ": "<< arr[i][j+1] << endl;
+                cout << "#" << j << ": "<< arr[i][j] << "  " << "#" << j+1 << ": "<< arr[i][j+1] << endl;
             }
             else{
                 cout <<  "#" << j << ": "<< arr[i][j] << endl;
@@ -100,6 +96,11 @@ int main (){
 
         cout << "\nCoinciden con los primeros";
     }
+}
+int main (){
 
+    int vagones = 3; //numero de vagones
+    int asientos_x_vagon = 15; //Numero de asientos por vagon
+    tren(vagones,asientos_x_vagon);
     return 0;
 }
